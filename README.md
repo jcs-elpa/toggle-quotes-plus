@@ -11,7 +11,17 @@
 
 This is much of the universal solution, it just simply toggle 
 and cycle through the `quotes` you specify under 
-`toggle-quotes-plus-chars` list in any file.
+`toggle-quotes-plus-chars` list in any file. 
+
+This package search for the character that can be cycled in both 
+`backward` and `forward` directions. The original `toggle-quotes` 
+will only works in string so it will not work in `.html` or `.md` 
+file type. 
+
+For escape character, I couldn't figure out the best way to 
+resolve this. Currently, this package will just ignore the escape 
+character. If you have an idea to solve this you can open an 
+`issue` or `pull request`, both methods are welcome.
 
 *P.S. Inspired by [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes) from VS Code Marketplace.* <br/>
 *P.S. Similar package [toggle-quotes](https://github.com/toctan/toggle-quotes.el) by [Tian, Jin](https://github.com/toctan).*
