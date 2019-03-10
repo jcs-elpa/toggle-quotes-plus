@@ -6,7 +6,7 @@
 > Simple quote toggler that cycle through " ' and `
 
 <p align="center">
-  <img src="./screenshot/toggle-quotes-plus-demo.gif" width="450" height="513"/>
+  <img src="./screenshot/toggle-quotes-plus-demo.gif" width="504" height="112"/>
 </p>
 
 This is much of the universal solution, it just simply toggle 
