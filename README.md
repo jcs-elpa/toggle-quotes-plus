@@ -11,7 +11,7 @@
 
 This is much of the universal solution, it just simply toggle 
 and cycle through the `quotes` you specify under 
-`toggle-quotes-plus-chars` list.
+`toggle-quotes-plus-chars` list in any file.
 
 *P.S. Inspired by [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes) from VS Code Marketplace.* <br/>
 *P.S. Similar package [toggle-quotes](https://github.com/toctan/toggle-quotes.el) by [Tian, Jin](https://github.com/toctan).*
