@@ -6,7 +6,7 @@
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Description: Simple quote toggler that cycle through " ' and `
 ;; Keyword: convenience quotes
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Package-Requires: ((emacs "25"))
 ;; URL: https://github.com/jcs-elpa/toggle-quotes-plus
 
