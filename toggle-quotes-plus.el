@@ -34,14 +34,12 @@
 
 (require 'cl-lib)
 
-
 (defgroup toggle-quotes-plus nil
   "Simple quote toggler that cycle through \" ' and `."
   :prefix "toggle-quotes-plus-"
   :group 'convenience
   :group 'tools
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/toggle-quotes-plus"))
-
 
 (defcustom toggle-quotes-plus-chars '("\""
                                       "'"
@@ -50,59 +48,54 @@
   :group 'toggle-quotes-plus
   :type 'list)
 
-
-
-(defun toggle-quotes-plus-is-beginning-of-buffer-p ()
+(defun toggle-quotes-plus--is-beginning-of-buffer-p ()
   "Is at the beginning of buffer?"
   (= (point) (point-min)))
 
-(defun toggle-quotes-plus-is-end-of-buffer-p ()
+(defun toggle-quotes-plus--is-end-of-buffer-p ()
   "Is at the end of buffer?"
   (= (point) (point-max)))
 
-(defun toggle-quotes-plus-current-char-equal-p (c)
+(defun toggle-quotes-plus--current-char-equal-p (c)
   "Check the current character equal to 'C'."
-  (if (toggle-quotes-plus-is-beginning-of-buffer-p)
+  (if (toggle-quotes-plus--is-beginning-of-buffer-p)
       nil
     (let ((current-char-string (string (char-before))))
       (string= current-char-string c))))
 
-(defun toggle-quotes-plus-is-in-list-string (in-list str)
-  "Check if a string in the string list.
-IN-LIST : list of strings.
-STR : string to check if is inside the list of strings above."
+(defun toggle-quotes-plus--is-in-list-string (in-list str)
+  "Check if a STR in the string list IN-LIST."
   (cl-some #'(lambda (lb-sub-str) (string= lb-sub-str str)) in-list))
 
-(defun toggle-quotes-plus-current-char ()
+(defun toggle-quotes-plus--current-char ()
   "Return the current character."
   (string (char-before)))
 
-(defun toggle-quotes-plus-check-espace-char ()
+(defun toggle-quotes-plus--check-espace-char ()
   "Check if the current character a espace character?"
   (save-excursion
     (let ((is-esp nil))
       (backward-char 1)
-      (when (string= (toggle-quotes-plus-current-char) "\\")
+      (when (string= (toggle-quotes-plus--current-char) "\\")
         (setq is-esp t))
       is-esp)))
 
-(defun toggle-quotes-plus-forward-a-char-in-cycle ()
+(defun toggle-quotes-plus--forward-a-char-in-cycle ()
   "Move forward to a character that are in the `toggle-quotes-plus-chars' list."
   (forward-char 1)
-  (while (and (not (toggle-quotes-plus-is-end-of-buffer-p))
-              (or (not (toggle-quotes-plus-is-in-list-string toggle-quotes-plus-chars (toggle-quotes-plus-current-char)))
-                  (toggle-quotes-plus-check-espace-char)))
+  (while (and (not (toggle-quotes-plus--is-end-of-buffer-p))
+              (or (not (toggle-quotes-plus--is-in-list-string toggle-quotes-plus-chars (toggle-quotes-plus--current-char)))
+                  (toggle-quotes-plus--check-espace-char)))
     (forward-char 1)))
 
-(defun toggle-quotes-plus-backward-a-char-in-cycle ()
+(defun toggle-quotes-plus--backward-a-char-in-cycle ()
   "Move backward to a character that are in the `toggle-quotes-plus-chars' list."
-  (while (and (not (toggle-quotes-plus-is-beginning-of-buffer-p))
-              (or (not (toggle-quotes-plus-is-in-list-string toggle-quotes-plus-chars (toggle-quotes-plus-current-char)))
-                  (toggle-quotes-plus-check-espace-char)))
+  (while (and (not (toggle-quotes-plus--is-beginning-of-buffer-p))
+              (or (not (toggle-quotes-plus--is-in-list-string toggle-quotes-plus-chars (toggle-quotes-plus--current-char)))
+                  (toggle-quotes-plus--check-espace-char)))
     (backward-char 1)))
 
-
-(defun toggle-quotes-plus-next-char-in-list (current-char)
+(defun toggle-quotes-plus--next-char-in-list (current-char)
   "Get the next character in the `toggle-quotes-plus-chars' list.
 CURRENT-CHAR : Current character to search for next character in list."
   (let ((lst-len (length toggle-quotes-plus-chars))
@@ -116,29 +109,27 @@ CURRENT-CHAR : Current character to search for next character in list."
       (setq next-char-index 0))
     (nth next-char-index toggle-quotes-plus-chars)))
 
-(defun toggle-quotes-plus-replace-next-char-in-cycle ()
+(defun toggle-quotes-plus--replace-next-char-in-cycle ()
   "Replace the current character to the next character at current point."
-  (let ((current-char (toggle-quotes-plus-current-char))
+  (let ((current-char (toggle-quotes-plus--current-char))
         (next-char ""))
     (backward-delete-char 1)
-    (setq next-char (toggle-quotes-plus-next-char-in-list current-char))
+    (setq next-char (toggle-quotes-plus--next-char-in-list current-char))
     (insert next-char)))
-
 
 ;;;###autoload
 (defun toggle-quotes-plus ()
   "Toggle cycle through \" ' and `."
   (interactive)
   (let ((start-pt (point)))
-    (toggle-quotes-plus-forward-a-char-in-cycle)
-    (unless (toggle-quotes-plus-is-end-of-buffer-p)
-      (toggle-quotes-plus-replace-next-char-in-cycle))
+    (toggle-quotes-plus--forward-a-char-in-cycle)
+    (unless (toggle-quotes-plus--is-end-of-buffer-p)
+      (toggle-quotes-plus--replace-next-char-in-cycle))
     (goto-char start-pt)
-    (toggle-quotes-plus-backward-a-char-in-cycle)
-    (unless (toggle-quotes-plus-is-beginning-of-buffer-p)
-      (toggle-quotes-plus-replace-next-char-in-cycle))
+    (toggle-quotes-plus--backward-a-char-in-cycle)
+    (unless (toggle-quotes-plus--is-beginning-of-buffer-p)
+      (toggle-quotes-plus--replace-next-char-in-cycle))
     (goto-char start-pt)))
-
 
 (provide 'toggle-quotes-plus)
 ;;; toggle-quotes-plus.el ends here
