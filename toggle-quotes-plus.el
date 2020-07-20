@@ -7,7 +7,7 @@
 ;; Description: Simple quote toggler that cycle through " ' and `
 ;; Keyword: convenience quotes
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "25") (cl-lib "0.6"))
+;; Package-Requires: ((emacs "25"))
 ;; URL: https://github.com/jcs090218/toggle-quotes-plus
 
 ;; This file is NOT part of GNU Emacs.
