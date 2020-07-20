@@ -8,7 +8,7 @@
 ;; Keyword: convenience quotes
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "25"))
-;; URL: https://github.com/jcs090218/toggle-quotes-plus
+;; URL: https://github.com/jcs-elpa/toggle-quotes-plus
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -40,7 +40,7 @@
   :prefix "toggle-quotes-plus-"
   :group 'convenience
   :group 'tools
-  :link '(url-link :tag "Repository" "https://github.com/jcs090218/toggle-quotes-plus"))
+  :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/toggle-quotes-plus"))
 
 
 (defcustom toggle-quotes-plus-chars '("\""
