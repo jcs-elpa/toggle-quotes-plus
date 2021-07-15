@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/jcs090218/toggle-quotes-plus.svg?branch=master)](https://travis-ci.com/jcs090218/toggle-quotes-plus)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CI](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml)
 
 # toggle-quotes-plus
 > Simple quote toggler that cycle through " ' and `
