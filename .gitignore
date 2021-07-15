@@ -2,7 +2,6 @@
 /.git
 /recipes
 /test
-toggle-quotes-plus-pkg.el
 
 # ignore generated files.
 *.elc
