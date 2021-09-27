@@ -1,8 +1,9 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CI](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml)
 
 # toggle-quotes-plus
 > Simple quote toggler that cycle through " ' and `
+
+[![CI](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/toggle-quotes-plus/actions/workflows/test.yml)
 
 <p align="center">
   <img src="./etc/toggle-quotes-plus-demo.gif" width="504" height="112"/>
