@@ -1,14 +1,13 @@
 ;;; toggle-quotes-plus.el --- Simple quote toggler that cycle through " ' and `   -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  Shen, Jen-Chieh
+;; Copyright (C) 2019-2022  Shen, Jen-Chieh
 ;; Created date 2019-03-10 21:45:21
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; Description: Simple quote toggler that cycle through " ' and `
-;; Keyword: convenience quotes
+;; URL: https://github.com/jcs-elpa/toggle-quotes-plus
 ;; Version: 0.0.2
 ;; Package-Requires: ((emacs "25"))
-;; URL: https://github.com/jcs-elpa/toggle-quotes-plus
+;; Keyword: convenience quotes
 
 ;; This file is NOT part of GNU Emacs.
 
