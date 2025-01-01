@@ -1,6 +1,6 @@
 ;;; toggle-quotes-plus.el --- Simple quote toggler that cycle through " ' and `   -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019-2024  Shen, Jen-Chieh
+;; Copyright (C) 2019-2025  Shen, Jen-Chieh
 ;; Created date 2019-03-10 21:45:21
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
