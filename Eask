@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (source "melpa")
 
 (package-file "toggle-quotes-plus.el")
